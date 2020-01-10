@@ -8,10 +8,17 @@ function MathPage() {
   // what happens when you use a string for a param?
 
   return (
-    <div>
-      {/* Show autocomplete for operator */}
-      <div>{mathTS(x, y, "add")}</div>
-      <div>{mathJS(x, z, "add")}</div>
+    <div className="calculator">
+      <div className="calculatorts">
+        {/* Show autocomplete for operator */}
+        {/* What if we pass z */}
+        <h1>Typescript</h1>
+        {x} + {y} = {mathTS(x, y, "add")}
+      </div>
+      <div className="calculatorjs">
+        <h1>Javascript</h1>
+        {x} + {z} = {mathJS(x, z, "add")}
+      </div>
     </div>
   );
 }
