@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { AddPage } from "./pages/AddPage";
+import { MathPage } from "./pages/MathPage";
 import { x, y, z } from "./utils/variables";
 
 // This site has 3 pages, all of which are rendered
@@ -21,7 +22,7 @@ export default function BasicExample() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/Subtract">Subtract</Link>
+            <Link to="/math">Math</Link>
           </li>
           <li>
             <Link to="/dashboard">Dashboard</Link>
@@ -35,30 +36,11 @@ export default function BasicExample() {
             {/* Why is this failing? */}
             <AddPage x={x} y={y} z={z} />
           </Route>
-          <Route path="/about">
-            <SubtractPage />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
+          <Route path="/math">
+            <MathPage />
           </Route>
         </Switch>
       </div>
     </Router>
-  );
-}
-
-function SubtractPage() {
-  return (
-    <div>
-      <h2>Subtract</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
   );
 }
